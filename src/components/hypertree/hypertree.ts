@@ -182,7 +182,7 @@ export class Hypertree {
         gotoHome: () => new Promise((ok, err) => this.animateTo(ok, err, { re: 0, im: 0 }, null)),
         gotoNode: (n: N, duration?: number) => new Promise((ok, err) => this.animateTo(ok, err, CmulR({ re: n.layout.z.re, im: n.layout.z.im }, -1), null, duration)),
 
-        goto: (p, l) => new Promise((ok, err) => this.animateTo(ok, err, p, l)),
+        goto: (p, l, duration?: number) => new Promise((ok, err) => this.animateTo(ok, err, p, l, duration)),
         gotoλ: (l) => new Promise((ok, err) => this.animateToλ(ok, err, l))
     }
 
