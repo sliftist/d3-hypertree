@@ -180,7 +180,7 @@ export class Hypertree {
             this.update.pathes()
         },
         gotoHome: () => new Promise((ok, err) => this.animateTo(ok, err, { re: 0, im: 0 }, null)),
-        gotoNode: (n: N) => new Promise((ok, err) => this.animateTo(ok, err, CmulR({ re: n.layout.z.re, im: n.layout.z.im }, -1), null)),
+        gotoNode: (n: N, duration?: number) => new Promise((ok, err) => this.animateTo(ok, err, CmulR({ re: n.layout.z.re, im: n.layout.z.im }, -1), null, duration)),
 
         goto: (p, l) => new Promise((ok, err) => this.animateTo(ok, err, p, l)),
         gotoλ: (l) => new Promise((ok, err) => this.animateToλ(ok, err, l))
@@ -576,13 +576,13 @@ export class Hypertree {
         this.animateToλ(ok, err, newλ)
     }
 
-    public animateToλ(ok, err, newλ): void {
+    public animateToλ(ok, err, newλ, duration = 750): void {
         const initλ = this.args.geometry.transformation.state.λ
         const way = initλ - newλ
         new Animation({
             name: 'animateToλ',
             hypertree: this,
-            duration: 750,
+            duration,
             resolve: ok,
             reject: err,
             frame: (progress01) => {
