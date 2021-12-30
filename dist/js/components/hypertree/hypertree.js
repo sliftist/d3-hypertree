@@ -139,7 +139,7 @@ class Hypertree {
                 this.update.pathes();
             },
             gotoHome: () => new Promise((ok, err) => this.animateTo(ok, err, { re: 0, im: 0 }, null)),
-            gotoNode: (n) => new Promise((ok, err) => this.animateTo(ok, err, hyperbolic_math_3.CmulR({ re: n.layout.z.re, im: n.layout.z.im }, -1), null)),
+            gotoNode: (n, duration) => new Promise((ok, err) => this.animateTo(ok, err, hyperbolic_math_3.CmulR({ re: n.layout.z.re, im: n.layout.z.im }, -1), null, duration)),
             goto: (p, l) => new Promise((ok, err) => this.animateTo(ok, err, p, l)),
             gotoλ: (l) => new Promise((ok, err) => this.animateToλ(ok, err, l))
         };
