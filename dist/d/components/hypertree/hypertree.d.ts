@@ -38,7 +38,7 @@ export declare class Hypertree {
         setPathHead: (pathType: Path, n: N) => void;
         selectQuery: (query: string, prop: string) => void;
         gotoHome: () => Promise<unknown>;
-        gotoNode: (n: N) => Promise<unknown>;
+        gotoNode: (n: N, duration?: number) => Promise<unknown>;
         goto: (p: any, l: any) => Promise<unknown>;
         gotoλ: (l: any) => Promise<unknown>;
     };
