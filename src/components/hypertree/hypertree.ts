@@ -597,7 +597,7 @@ export class Hypertree {
         })
     }
 
-    public animateTo(resolve, reject, newP: C, newλ: number): void {
+    public animateTo(resolve, reject, newP: C, newλ: number, duration = 750): void {
         const initTS = clone(this.args.geometry.transformation.state)
         const way = CsubC(initTS.P, newP)
         new Animation({
@@ -605,7 +605,7 @@ export class Hypertree {
             resolve: resolve,
             reject: reject,
             hypertree: this,
-            duration: 750,
+            duration,
             frame: (progress01) => {
                 const waydone01 = 1 - sigmoid(progress01)
                 console.assert(waydone01 >= 0 && waydone01 <= 1)
