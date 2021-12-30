@@ -504,7 +504,7 @@ class Hypertree {
             }
         });
     }
-    animateTo(resolve, reject, newP, newλ) {
+    animateTo(resolve, reject, newP, newλ, duration = 750) {
         const initTS = ducd_2.clone(this.args.geometry.transformation.state);
         const way = hyperbolic_math_3.CsubC(initTS.P, newP);
         new Animation({
@@ -512,7 +512,7 @@ class Hypertree {
             resolve: resolve,
             reject: reject,
             hypertree: this,
-            duration: 750,
+            duration: duration,
             frame: (progress01) => {
                 const waydone01 = 1 - hyperbolic_math_4.sigmoid(progress01);
                 console.assert(waydone01 >= 0 && waydone01 <= 1);
