@@ -26,7 +26,7 @@
   "dependencies": {
     "d3": "^4.13.0",
     "d3-force-gravity": "^1.0.2",
-    "ducd": "git+https://github.com/raymond-rwu/ducd.git",
+    "ducd": "git+https://github.com/sliftist/ducd.git",
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
