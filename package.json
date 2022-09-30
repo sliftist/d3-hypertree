@@ -21,7 +21,8 @@
     "prepare": "gulp build"
   },
   "resolutions": {
-    "graceful-fs": "^4.2.4"
+    "graceful-fs": "^4.2.4",
+    "source-map": "0.7.4"
   },
   "dependencies": {
     "d3": "^4.13.0",
@@ -47,7 +48,7 @@
     "merge2": "^1.4.1",
     "typescript": "^4.3.2",
     "webpack": "^5.38.1",
-    "webpack-stream": "^6.1.2",
+    "webpack-stream": "7.0.0",
     "yargs": "^17.0.1"
   }
 }
